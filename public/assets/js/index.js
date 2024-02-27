@@ -36,13 +36,14 @@ const getNotes = () =>
     }
   });
 
-const saveNote = (note) =>
+const saveNote = (newNote) =>
   fetch('/api/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(note)
+    // req.body is/are the inputs that are received from front end to put in db
+    body: JSON.stringify(newNote)
   });
 
 const deleteNote = (id) =>
