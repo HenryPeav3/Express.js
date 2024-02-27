@@ -13,14 +13,15 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-// GET Route for homepage
+//base url: localhost:3001/
+// GET Route for landing pages
 app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
-// GET Route for feedback page
-app.get('/feedback', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/pages/feedback.html'))
+// GET Route for notes page
+app.get('/notes', (req, res) =>
+  res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
 app.listen(PORT, () =>
